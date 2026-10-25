@@ -1,0 +1,58 @@
+{
+  "mcpServers": {
+    "james-watt-ai": {
+      "command": "cargo",
+      "args": [
+        "run",
+        "--release",
+        "--quiet"
+      ],
+      "env": {
+        "RUST_LOG": "info",
+        "TITAN_PROTOCOL": "JAMESWATT",
+        "TARGET_CHAIN": "Sui",
+        "FIPS_203_LEVEL": "ML-KEM-768",
+        "FIPS_204_LEVEL": "ML-DSA-65"
+      },
+      "tools": [
+        {
+          "name": "calculate_condenser_thermal_efficiency",
+          "description": "Computes fuel saving percentage achieved by keeping main cylinder permanently hot while condensing in separate vessel",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "boiler_temp_c": {
+                "type": "number"
+              },
+              "condenser_temp_c": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "boiler_temp_c",
+              "condenser_temp_c"
+            ]
+          }
+        },
+        {
+          "name": "model_centrifugal_flyball_governor",
+          "description": "Solves negative feedback angular speed equilibrium controlling steam throttle valve",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "rpm": {
+                "type": "number"
+              },
+              "flyball_mass_kg": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "rpm"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

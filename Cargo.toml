@@ -1,0 +1,6 @@
+[package]
+name = "james-watt-ai"
+version = "1.0.0"
+edition = "2021"
+
+[dependencies]
